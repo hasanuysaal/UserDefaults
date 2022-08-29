@@ -47,6 +47,19 @@ class ViewController: UIViewController {
 
     @IBAction func deleteButton(_ sender: Any) {
         
+        let savedToDo = UserDefaults.standard.object(forKey: "toDoTextUD")
+        let savedDate = UserDefaults.standard.object(forKey: "dateTextUD")
+        
+        if (savedToDo as? String) != nil {
+            UserDefaults.standard.removeObject(forKey: "toDoTextUD")
+            toDoLabel.text = ""
+        }
+        
+        if (savedDate as? String) != nil {
+            UserDefaults.standard.removeObject(forKey: "dateTextUD")
+            dateLabel.text = ""
+        }
+    
     }
     
 }
